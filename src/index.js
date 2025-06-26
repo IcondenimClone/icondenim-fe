@@ -1,8 +1,7 @@
-// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; // Dòng này để import toàn bộ CSS của bạn
-import App from './App'; // Dòng này import component giao diện chính
+import './index.css'; 
+import App from './App'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
