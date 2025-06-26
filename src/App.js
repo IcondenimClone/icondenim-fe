@@ -1,30 +1,20 @@
-// src/App.js
 import { useState, useEffect } from 'react';
-
 function App() {
-    // --- Phần JavaScript sẽ nằm ở đây ---
     const [activeTab, setActiveTab] = useState('login-form');
-  
-    // useEffect là cách React xử lý logic sau khi giao diện đã được vẽ ra.
-    // Nó tương đương với document.addEventListener('DOMContentLoaded', ...)
     useEffect(() => {
       // Logic chuyển tab
       const tabs = document.querySelectorAll('.tab');
       tabs.forEach(tab => {
-        // Dùng hàm bọc để không tạo listener mới mỗi lần re-render
         const handleTabClick = () => {
           const targetId = tab.getAttribute('data-target');
           setActiveTab(targetId);
         };
         tab.addEventListener('click', handleTabClick);
-  
-        // Cleanup function để gỡ listener khi component bị hủy
         return () => {
           tab.removeEventListener('click', handleTabClick);
         };
       });
-  
-      // Logic ẩn/hiện password
+
       const togglePassword = document.getElementById('toggle-password');
       const passwordInput = document.getElementById('login-password');
       if (togglePassword && passwordInput) {
@@ -41,10 +31,8 @@ function App() {
           togglePassword.removeEventListener('click', handleTogglePassword);
         };
       }
-    }, []); // Mảng rỗng [] đảm bảo useEffect chỉ chạy 1 lần duy nhất sau khi component được mount
-  
-    // --- Phần JSX (HTML) sẽ nằm ở đây ---
-    // Lưu ý: class -> className, for -> htmlFor, và mọi thẻ phải được đóng
+    }, []);
+    
     return (
       <>
         <header className="header">
