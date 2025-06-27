@@ -37,7 +37,7 @@ function App() {
             <div className="container">
                 <div className="header-inner">
                     <a href="/" className="header-logo">
-                        <img src="https://file.hstatic.net/1000360022/file/logo_svg_d91361b7b415484db4a26b68e7d4724d.svg" alt="ICONDENIM Logo" />
+                        <img src="assets/images/logo.webp" alt="ICONDENIM Logo" />
                     </a>
                     <nav className="header-nav">
                         <ul>
@@ -104,7 +104,7 @@ function App() {
         <div className="footer-grid">
           <div className="footer-column">
             <a href="/" className="footer-logo">
-              <img src="assets/images/logo.webp" alt="ICONDENIM Logo" />
+              <img src="assets/images/logo_footer.webp" alt="ICONDENIM Logo" />
             </a>
             <p><i className="fas fa-phone"></i> Tổng đài CSKH: 02873066060</p>
             <p><i className="fas fa-envelope"></i> Email: cskh@icondenim.com</p>
