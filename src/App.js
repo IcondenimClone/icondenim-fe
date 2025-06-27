@@ -70,7 +70,7 @@ function App() {
                     <span>Đăng nhập</span>
                 </div>
                 <div className="form-account-wrapper">
-                    <h1 className="page-title">ĐĂNG NHẬP TÀI KHOẢN</h1>
+                    <h2 className="page-title">ĐĂNG NHẬP TÀI KHOẢN</h2>
                     <div className="form-box"> 
                         <div className="form-tabs">
                             <div className={`tab ${activeTab === 'login-form' ? 'active' : ''}`} data-target="login-form">ĐĂNG NHẬP</div>
