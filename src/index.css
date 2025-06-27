@@ -204,7 +204,7 @@ ul {
 
 /* footer  */
 .site-footer {
-    background-color: #002346;
+    background-color: #001F5D;
     color: #fff;
     padding: 50px 0 20px;
     font-size: 14px;
@@ -251,37 +251,51 @@ ul {
 
 .subscribe-form {
     display: flex;
+    padding: 5px;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.subscribe-form {
+    display: flex; 
+    align-items: center; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     margin-top: 5px;
+    padding-bottom: 5px; 
 }
 
 .subscribe-form input {
     flex-grow: 1;
-    border: none;
-    padding: 10px;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
-    border-right: none;
-    border-radius: 4px 0 0 4px;
+    border: none; 
+    background-color: transparent; 
+    padding: 10px 5px;
+    color: #fff; 
+    font-size: 14px;
 }
+
 .subscribe-form input::placeholder {
-    color: #aaa;
+    color: #aaa; 
 }
+
 .subscribe-form input:focus {
     outline: none;
-    border-color: #fff;
 }
 
 .subscribe-form button {
-    border: none;
+    border: none; 
     background-color: #000;
     color: #fff;
-    padding: 0 20px;
+    padding: 10px 25px; 
     cursor: pointer;
-    border-radius: 0 4px 4px 0;
+    border-radius: 8px; 
     text-transform: uppercase;
     font-weight: bold;
     font-size: 13px;
+    white-space: nowrap; 
+    transition: opacity 0.2s;
+}
+
+.subscribe-form button:hover {
+    opacity: 0.8;
 }
 
 .social-links {
@@ -327,7 +341,6 @@ ul {
     text-decoration: underline;
     font-weight: bold;
     color: #fff;
-    margin-top: auto; /* Đẩy link xuống cuối cột */
 }
 
 .fanpage-widget img {
@@ -358,7 +371,6 @@ ul {
     text-align: center;
     margin-top: 50px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 13px;
     color: #ccc;
 }
