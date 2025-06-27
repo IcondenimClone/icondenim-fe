@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-
 function App() {
     const [activeTab, setActiveTab] = useState('login-form');
     useEffect(() => {
@@ -10,7 +9,10 @@ function App() {
           setActiveTab(targetId);
         };
         tab.addEventListener('click', handleTabClick);
+<<<<<<< HEAD
   
+=======
+>>>>>>> 003abde512f0ce041cbed81548ce31db36dba993
         return () => {
           tab.removeEventListener('click', handleTabClick);
         };
@@ -31,7 +33,12 @@ function App() {
           togglePassword.removeEventListener('click', handleTogglePassword);
         };
       }
+<<<<<<< HEAD
     }, []); 
+=======
+    }, []);
+    
+>>>>>>> 003abde512f0ce041cbed81548ce31db36dba993
     return (
       <>
         <header className="header">
