@@ -1,10 +1,14 @@
+import logo from '../assets/images/logo.webp';
 function Header() {
   return (
     <header className="header">
       <div className="container">
         <div className="header-inner">
+          <button class="inner-menu-mobile">
+            <i class="fa-solid fa-bars"></i>
+          </button>
           <a href="/" className="header-logo">
-            <img src="/assets/images/logo.webp" alt="ICONDENIM Logo" />
+            <img src={logo} alt="ICONDENIM Logo" />
           </a>
           <nav className="header-nav">
             <ul>

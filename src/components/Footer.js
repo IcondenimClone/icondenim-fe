@@ -1,3 +1,7 @@
+import footerLogo from '../assets/images/logo_footer.webp';
+import fanpageImg from '../assets/images/FF.png';
+import dmcaImg from '../assets/images/dmca.png';
+import bctImg from '../assets/images/dathongbao.webp';
 function Footer() {
   return (
     <footer className="site-footer">
@@ -5,7 +9,7 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-column">
             <a href="/" className="footer-logo">
-              <img src="/assets/images/logo_footer.webp" alt="ICONDENIM Logo" />
+              <img src={footerLogo} alt="ICONDENIM Logo" />
             </a>
             <p><i className="fas fa-phone"></i> Tổng đài CSKH: 02873066060</p>
             <p><i className="fas fa-envelope"></i> Email: cskh@icondenim.com</p>
@@ -77,7 +81,7 @@ function Footer() {
           <div className="footer-column">
             <h4 className="footer-title">FANPAGE CHÚNG TÔI</h4>
             <div className="fanpage-widget">
-              <img src="/assets/images/FF.png" alt="Fanpage Facebook" />
+              <img src={fanpageImg} alt="Fanpage Facebook" />
             </div>
             <h4 className="footer-title">PHƯƠNG THỨC THANH TOÁN</h4>
             <div className="payment-methods">
@@ -85,8 +89,8 @@ function Footer() {
               <span>COD</span>
             </div>
             <div className="certifications">
-              <img src="/assets/images/dmca.png" alt="DMCA Protected" />
-              <img src="/assets/images/dathongbao.webp" alt="Đã Thông Báo Bộ Công Thương" />
+              <img src={dmcaImg} alt="DMCA Protected" />
+              <img src={bctImg} alt="Đã Thông Báo Bộ Công Thương" />
             </div>
           </div>
         </div>
