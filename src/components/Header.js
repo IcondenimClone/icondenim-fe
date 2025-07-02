@@ -21,7 +21,7 @@ function Header() {
               <li><a href="/" className="outlet-link">OUTLET
                   <span className="outlet-percent">-50%</span>
                   </a>
-              </li>
+              </li> 
             </ul>
           </nav>
           <div className="header-actions">

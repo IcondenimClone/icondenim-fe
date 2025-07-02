@@ -8,10 +8,12 @@ import HomePage from './pages/HomePage';
 function App() {
   return (
     <>
-      <TopBar />
-      <Header />
+      <div className="sticky-header">
+        <TopBar />
+        <Header />
+      </div>
       {/* <AuthPage /> */}
-       <HomePage />
+      <HomePage />
       <Footer />
     </>
   );

@@ -13,3 +13,4 @@ function PolicyItem({ icon, title, subtitle }) {
 }
 
 export default PolicyItem;
+
