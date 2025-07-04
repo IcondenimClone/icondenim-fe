@@ -89,8 +89,8 @@ function Footer() {
               <span>COD</span>
             </div>
             <div className="certifications">
-              <img src={dmcaImg} alt="DMCA Protected" />
               <img src={bctImg} alt="Đã Thông Báo Bộ Công Thương" />
+              <img src={dmcaImg} alt="DMCA Protected" className='dmca'/>
             </div>
           </div>
         </div>

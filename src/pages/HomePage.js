@@ -1,15 +1,28 @@
+import { useState } from 'react';
 import Slide from '../components/Slide';
 import PoliciesSection from '../components/PoliciesSection';
-import CategoriesSection from '../components/CategoriesSection'; 
+import CategoriesSection from '../components/CategoriesSection';
 import VouchersSection from '../components/VouchersSection';
+import JeansFinder from '../components/JeansFinder'; 
 
+import { categoryData } from '../data';
 function HomePage() {
+  const [activeCategory, setActiveCategory] = useState('tat-ca-jeans');
+
+  const handleCategoryChange = (categoryId) => {
+    setActiveCategory(categoryId);
+  };
   return (
     <>
       <Slide />
       <PoliciesSection />
-      <CategoriesSection /> 
+      <CategoriesSection />
       <VouchersSection />
+      <JeansFinder 
+        categories={categoryData}
+        activeId={activeCategory}
+        onCategoryChange={handleCategoryChange}
+      />
     </>
   );
 }
