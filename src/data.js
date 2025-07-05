@@ -13,6 +13,13 @@ import filterSieuCoDan from './assets/images/filter-sieu-co-dan.png';
 import filterSieuCoDanActive from './assets/images/filter-sieu-co-dan-active.png';
 
 
+import jean1_blue_default from './assets/images/jean-1.jpg';
+import jean1_blue_hover from './assets/images/jean-hover-1.jpg';
+import jean1_black_default from './assets/images/jean-5.jpg';
+import jean1_black_hover from './assets/images/jean-hover-5.jpg';
+import color_blue from './assets/images/color-swatch-blue.jpg'; 
+import color_black from './assets/images/color-swatch-black.jpg';
+import tagNewImage from './assets/images/TagNew.png';
 export const categoryData = [
   {
     id: 'tat-ca-jeans',
@@ -37,5 +44,123 @@ export const categoryData = [
     filterImage: filterSieuCoDan,
     filterImageActive: filterSieuCoDanActive,
     bannerImage: bannerSieuCoDan,
+  }
+];
+
+export const productsData = [
+  {
+    id: 1,
+    name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
+    price: '549,000₫',
+    tagImage: tagNewImage,
+    tag: 'HÀNG MỚI',
+    variants: [
+      {
+        id: 'blue',
+        colorName: 'Xanh nhạt',
+        imageDefault: jean1_blue_default,
+        imageHover: jean1_blue_hover,
+        colorSwatch: color_blue 
+      },
+      {
+        id: 'black',
+        colorName: 'Đen',
+        imageDefault: jean1_black_default,
+        imageHover: jean1_black_hover,
+        colorSwatch: color_black
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
+    price: '599,000₫',
+    tagImage: tagNewImage,
+    tag: 'HÀNG MỚI',
+    variants: [
+      {
+        id: 'blue',
+        colorName: 'Xanh nhạt',
+        imageDefault: jean1_blue_default,
+        imageHover: jean1_blue_hover,
+        colorSwatch: color_blue 
+      },
+      {
+        id: 'black',
+        colorName: 'Đen',
+        imageDefault: jean1_black_default,
+        imageHover: jean1_black_hover,
+        colorSwatch: color_black
+      }
+    ]
+  },
+  {
+    id: 3,
+    name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
+    price: '549,000₫',
+    tagImage: tagNewImage,
+    tag: 'HÀNG MỚI',
+    variants: [
+      {
+        id: 'blue',
+        colorName: 'Xanh nhạt',
+        imageDefault: jean1_blue_default,
+        imageHover: jean1_blue_hover,
+        colorSwatch: color_blue 
+      },
+      {
+        id: 'black',
+        colorName: 'Đen',
+        imageDefault: jean1_black_default,
+        imageHover: jean1_black_hover,
+        colorSwatch: color_black
+      }
+    ]
+  },
+  {
+    id: 4,
+    name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
+    price: '549,000₫',
+    tagImage: tagNewImage,
+    tag: 'HÀNG MỚI',
+    variants: [
+      {
+        id: 'blue',
+        colorName: 'Xanh nhạt',
+        imageDefault: jean1_blue_default,
+        imageHover: jean1_blue_hover,
+        colorSwatch: color_blue 
+      },
+      {
+        id: 'black',
+        colorName: 'Đen',
+        imageDefault: jean1_black_default,
+        imageHover: jean1_black_hover,
+        colorSwatch: color_black
+      }
+    ]
+  },
+  {
+    id: 5,
+    name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
+    price: '549,000₫',
+    tagImage: tagNewImage,
+    tag: 'HÀNG MỚI',
+    variants: [
+      {
+        id: 'blue',
+        colorName: 'Xanh nhạt',
+        imageDefault: jean1_blue_default,
+        imageHover: jean1_blue_hover,
+        colorSwatch: color_blue 
+      },
+      {
+        id: 'black',
+        colorName: 'Đen',
+        imageDefault: jean1_black_default,
+        imageHover: jean1_black_hover,
+        colorSwatch: color_black
+      }
+    ]
   }
 ];
