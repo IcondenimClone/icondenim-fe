@@ -20,6 +20,11 @@ import jean1_black_hover from './assets/images/jean-hover-5.jpg';
 import color_blue from './assets/images/color-swatch-blue.jpg'; 
 import color_black from './assets/images/color-swatch-black.jpg';
 import tagNewImage from './assets/images/TagNew.png';
+
+import bannerNewArrivals from './assets/images/banner-new-product.jpg';
+import bannerBestSellers from './assets/images/banner-best-seller.jpg';
+import bannerSummer from './assets/images/banner-summer-collection.jpg';
+
 export const categoryData = [
   {
     id: 'tat-ca-jeans',
@@ -164,3 +169,58 @@ export const productsData = [
     ]
   }
 ];
+
+export const displayTabs = [
+    { 
+        id: 'new-arrivals', 
+        title: 'Hàng mới',
+        bannerImage: bannerNewArrivals, 
+    },
+    { 
+        id: 'best-sellers', 
+        title: 'Bán chạy',
+        bannerImage: bannerBestSellers,
+    },
+    { 
+        id: 'summer-collection', 
+        title: 'Đồ Hè',
+        bannerImage: bannerSummer,
+    },
+];
+export const featuredProductsData={
+  'new-arrivals':[
+    productsData[0],
+    productsData[1],
+    productsData[2],
+    productsData[3],
+    productsData[4],
+    productsData[0],
+    productsData[1],
+    productsData[2],
+    productsData[4],
+  ],
+  'best-sellers':[
+    productsData[2],
+    productsData[3],
+    productsData[1],
+    productsData[2],
+    productsData[3],
+    productsData[4],
+    productsData[0],
+    productsData[1],
+    productsData[4],
+    productsData[2],
+  ],
+  'summer-collection':[
+    productsData[0],
+    productsData[1],
+    productsData[2],
+    productsData[3],
+    productsData[4],
+    productsData[0],
+    productsData[1],
+    productsData[2],
+    productsData[3],
+    productsData[4],
+  ]
+}

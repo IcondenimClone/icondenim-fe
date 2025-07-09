@@ -6,7 +6,7 @@ import VouchersSection from '../components/VouchersSection';
 import JeansFinder from '../components/JeansFinder'; 
 import ProductList from '../components/ProductList';
 import  BlockButton  from '../components/BlockButton';
-
+import FeaturedProducts from '../components/FeaturedProducts';
 import { categoryData } from '../data';
 
 function HomePage() {
@@ -17,6 +17,7 @@ function HomePage() {
   };
   return (
     <>
+      
       <Slide />
       <PoliciesSection />
       <CategoriesSection />
@@ -28,6 +29,9 @@ function HomePage() {
       />
       <ProductList></ProductList>
        <BlockButton>Xem tất cả</BlockButton>
+
+      <FeaturedProducts />
+      <BlockButton>Xem tất cả</BlockButton>
     </>
   );
 }
