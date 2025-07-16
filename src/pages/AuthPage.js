@@ -38,6 +38,7 @@ function AuthPage() {
             <div className="container">
                 <div className="breadcrumbs">
                     <a href="/">Trang chủ</a> / 
+                    <a href="/">Danh mục</a> / 
                     <a href="/">Tài khoản</a> / 
                     <span>Đăng nhập</span>
                 </div>

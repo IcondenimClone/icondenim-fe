@@ -13,6 +13,11 @@ function ComboMMSection(){
                 <div className="inner-group">
                     <div className="inner-item">
                         <img src={bannerCB1}></img>
+                        <div className="inner-icon">
+                            <a href="#">
+                                <img src={addToCart}></img>
+                            </a>    
+                        </div>
                         
                     </div>
                     <div className="inner-item">

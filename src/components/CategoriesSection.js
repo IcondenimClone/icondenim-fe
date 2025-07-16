@@ -17,13 +17,14 @@ function CategoriesSection() {
   return (
     <section className="categories-section">
       <div className="container">
-        <div className="section-grid">
+        <div className="categories-wrap">
           {categoriesData.map((cat, index) => (
-            <CategoryCard
-              key={index}
-              image={cat.image}
-              link={cat.link}
-            />
+            <div className="inner-item" key={index}>
+              <CategoryCard
+                image={cat.image}
+                link={cat.link}
+              />
+            </div>
           ))}
         </div>
       </div>

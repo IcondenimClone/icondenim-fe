@@ -12,14 +12,11 @@ function VouchersSection() {
     return (
         <section className="vouchers-section">
             <div className="container">
-                <div className="section-grid">
+                <div className="vouchers-wrap">
                     {vouchersData.map((voucher, index) => (
                         <VoucherCard
                             key={index}
-                            type={voucher.type}
-                            value={voucher.value}
-                            condition={voucher.condition}
-                            code={voucher.code}
+                            {...voucher}
                         />
                     ))}
                 </div>

@@ -11,9 +11,14 @@ function Footer() {
             <a href="/" className="footer-logo">
               <img src={footerLogo} alt="ICONDENIM Logo" />
             </a>
-            <p><i className="fas fa-phone"></i> Tổng đài CSKH: 02873066060</p>
-            <p><i className="fas fa-envelope"></i> Email: cskh@icondenim.com</p>
-
+            <a className='inner-contact'>
+              <i className="fas fa-phone"></i>
+              <p>Tổng đài CSKH: 02873066060</p>
+            </a>
+            <a className='inner-contact'>
+              <i className="fas fa-envelope"></i>
+              <p>Email: cskh@icondenim.com</p>
+            </a>
             <h4 className="footer-title">ĐĂNG KÝ NHẬN TIN</h4>
             <p className="footer-desc">
               Hãy là người đầu tiên nhận khuyến mãi lớn!
@@ -89,13 +94,17 @@ function Footer() {
               <span>COD</span>
             </div>
             <div className="certifications">
-              <img src={bctImg} alt="Đã Thông Báo Bộ Công Thương" />
-              <img src={dmcaImg} alt="DMCA Protected" className='dmca'/>
+              <div className='inner-bct'>
+                <img src={bctImg} alt="Đã Thông Báo Bộ Công Thương" />
+              </div>
+              <div className='inner-dmca'>
+                <img src={dmcaImg} alt="DMCA Protected" className='dmca'/>
+              </div>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© Bản quyền thuộc về ICONDENIM</p>
+          © Bản quyền thuộc về <a>ICONDENIM</a> 
         </div>
       </div>
     </footer>

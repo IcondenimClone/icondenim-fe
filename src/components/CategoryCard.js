@@ -1,9 +1,11 @@
 import React from "react";
-function CategoryCard({ image, link }) {
-    return (
-        <a href={link} className="category-card" style={{ backgroundImage: `url(${image})`}}>
-        </a>
-    );
+
+function CategoryCard({ link, image }) {
+  return (
+    <a href={link} className="category-card">
+      <img src={image} alt="" />
+    </a>
+  );
 }
 
 export default CategoryCard;

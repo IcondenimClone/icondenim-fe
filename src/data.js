@@ -22,16 +22,25 @@ import color_black from './assets/images/color-swatch-black.jpg';
 import tagNewImage from './assets/images/TagNew.png';
 
 import bannerNewArrivals from './assets/images/banner-new-product.jpg';
+import bannerNewArrivalsRespon from './assets/images/banner-new-product-repon.jpg';
 import bannerBestSellers from './assets/images/banner-best-seller.jpg';
+import bannerBestSellersRespon from './assets/images/banner-best-seller-repon.jpg';
 import bannerSummer from './assets/images/banner-summer-collection.jpg';
+import bannerSummerRespon from './assets/images/banner-summer-collection-repon.jpg';
 
 import bannerTShirt from './assets/images/banner-ao-thun.jpg';
+import bannerTShirtRespon from './assets/images/banner-ao-thun-repon.jpg';
 import bannerShirt from './assets/images/banner-ao-so-mi.jpg';
+import bannerShirtRespon from './assets/images/banner-ao-so-mi-repon.jpg';
 import bannerPoloShirt from './assets/images/banner-ao-polo.jpg';
+import bannerPoloShirtRespon from './assets/images/banner-ao-polo-repon.jpg';
 
 import bannerShortPant from './assets/images/banner-short-pant.jpg';
+import bannerShortPantRespon from './assets/images/banner-short-pant-repon.jpg';
 import bannerJeanPant from './assets/images/banner-jean-pant.jpg';
+import bannerJeanPantRespon from './assets/images/banner-jean-pant-repon.jpg';
 import bannerTrousers from './assets/images/banner-trousers.jpg';
+import bannerTrousersRespon from './assets/images/banner-trousers-repon.jpg';
 
 import collection1 from './assets/images/banner-collection-new-1.jpg';
 import collection2 from './assets/images/banner-collection-new-2.jpg';
@@ -74,6 +83,7 @@ export const productsData = [
     id: 1,
     name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
     price: '549,000₫',
+    category: 'sieu-co-dan',
     tagImage: tagNewImage,
     tag: 'HÀNG MỚI',
     variants: [
@@ -95,8 +105,9 @@ export const productsData = [
   },
   {
     id: 2,
-    name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
+    name: 'Quần Smart Jean Nam Siêu Co Mát Xám Trơn Form Smart Fit',
     price: '599,000₫',
+    category: 'sieu-mat',
     tagImage: tagNewImage,
     tag: 'HÀNG MỚI',
     variants: [
@@ -118,8 +129,9 @@ export const productsData = [
   },
   {
     id: 3,
-    name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
+    name: 'Quần Smart Jean Nam Siêu Nhẹ Xám Trơn Form Smart Fit',
     price: '549,000₫',
+    category: 'sieu-nhe',
     tagImage: tagNewImage,
     tag: 'HÀNG MỚI',
     variants: [
@@ -143,6 +155,7 @@ export const productsData = [
     id: 4,
     name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
     price: '549,000₫',
+    category: 'sieu-co-dan',
     tagImage: tagNewImage,
     tag: 'HÀNG MỚI',
     variants: [
@@ -166,6 +179,7 @@ export const productsData = [
     id: 5,
     name: 'Quần Smart Jean Nam Siêu Co Dãn Xám Trơn Form Smart Fit',
     price: '549,000₫',
+    category: 'sieu-mat',
     tagImage: tagNewImage,
     tag: 'HÀNG MỚI',
     variants: [
@@ -192,16 +206,19 @@ export const displayTabs = [
         id: 'new-arrivals', 
         title: 'Hàng mới',
         bannerImage: bannerNewArrivals, 
+        bannerImageResponsive: bannerNewArrivalsRespon,
     },
     { 
         id: 'best-sellers', 
         title: 'Bán chạy',
         bannerImage: bannerBestSellers,
+        bannerImageResponsive: bannerBestSellersRespon,
     },
     { 
         id: 'summer-collection', 
         title: 'Đồ Hè',
         bannerImage: bannerSummer,
+        bannerImageResponsive: bannerSummerRespon,
     },
 ];
 export const featuredProductsData={
@@ -245,12 +262,15 @@ export const featuredProductsData={
 export const displayShirtTabs=[
   {
     id:'t-shirt', title:'Áo Thun', bannerImage: bannerTShirt,
+    bannerImageResponsive: bannerTShirtRespon,
   },
   {
     id:'shirt', title:'Áo Sơ mi', bannerImage: bannerShirt,
+    bannerImageResponsive: bannerShirtRespon,
   },
   {
     id:'polo-shirt', title:'Áo Polo', bannerImage: bannerPoloShirt,
+    bannerImageResponsive: bannerPoloShirtRespon,
   }
 ];
 export const shirtSectionData={
@@ -294,12 +314,15 @@ export const shirtSectionData={
 export const displayPantTabs=[
   {
     id:'short-pant', title:'Quần Short', bannerImage: bannerShortPant,
+    bannerImageResponsive : bannerShortPantRespon,
   },
   {
     id:'jean-pant', title:'Quần Jean', bannerImage: bannerJeanPant,
+    bannerImageResponsive : bannerJeanPantRespon,
   },
   {
     id:'trousers-pant', title:'Quần Tây', bannerImage: bannerTrousers,
+    bannerImageResponsive : bannerTrousersRespon,
   }
 ];
 export const pantSectionData={

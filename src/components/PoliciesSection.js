@@ -30,7 +30,7 @@ function PoliciesSection() {
   return (
     <section className="policies-section">
       <div className="container">
-        <div className="policies-grid">
+        <div className="policies-wrap">
           {policiesData.map((policy, index) => (
             <PolicyItem 
               key={index}

@@ -1,11 +1,10 @@
 // src/components/CollectionSection.js
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules'; // Chỉ cần Navigation nếu không dùng pagination
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 import { collectionsData } from '../data';
 
@@ -16,12 +15,21 @@ function CollectionSection() {
         <h2 className="inner-title">Bộ Sưu Tập Mới Nhất</h2>
         <div className="collection-slider-wrapper">
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation]}
             spaceBetween={20}
-            slidesPerView={3}
             navigation={true}
             loop={false}
             className="collection-slider"
+            breakpoints={{
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 15
+              },
+              992: {
+                slidesPerView: 3,
+                spaceBetween: 20
+              },
+            }}
           >
             {collectionsData.map((collection) => (
               <SwiperSlide key={collection.id} className="collection-slide-item">
