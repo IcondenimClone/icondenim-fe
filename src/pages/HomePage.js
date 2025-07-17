@@ -15,6 +15,7 @@ import ComboMMSection from '../components/ComboMMSection';
 import VideoBannerSection from '../components/VideoBannerSection';
 import FollowInstagramSection from '../components/FollowInstagramSection';
 import FashionNewsSection from '../components/FashionNewsSection';
+import FloatingButtons from '../components/FloatingButtons';
 
 function HomePage() {
   const [activeCategory, setActiveCategory] = useState('tat-ca-jeans');
@@ -55,6 +56,8 @@ function HomePage() {
       <FollowInstagramSection></FollowInstagramSection>
       <FashionNewsSection></FashionNewsSection>
       <BlockButton>Xem tất cả</BlockButton>
+
+      <FloatingButtons/>
     </>
   );
 }

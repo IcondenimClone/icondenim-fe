@@ -2,6 +2,8 @@ import footerLogo from '../assets/images/logo_footer.webp';
 import fanpageImg from '../assets/images/FF.png';
 import dmcaImg from '../assets/images/dmca.png';
 import bctImg from '../assets/images/dathongbao.webp';
+import COD from '../assets/images/method-cod.png'
+import vnpay from '../assets/images/method-vnpay.png'
 function Footer() {
   return (
     <footer className="site-footer">
@@ -86,12 +88,28 @@ function Footer() {
           <div className="footer-column">
             <h4 className="footer-title">FANPAGE CHÚNG TÔI</h4>
             <div className="fanpage-widget">
-              <img src={fanpageImg} alt="Fanpage Facebook" />
+              {/* <img src={fanpageImg} alt="Fanpage Facebook" /> */}
+              <iframe 
+                src="https://www.facebook.com/v2.0/plugins/page.php?adapt_container_width=true&app_id=&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df330edda5fc432ec0%26domain%3Dicondenim.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Ficondenim.com%252Ff8aeb1674fe0a288c%26relation%3Dparent.parent&container_width=331&height=300&hide_cover=false&href=https%3A%2F%2Fwww.facebook.com%2Ficondenimvn&locale=vi_VN&sdk=joey&show_facepile=true&show_posts=false&small_header=false" 
+                width="340" 
+                height="130" 
+                style={{ border: 'none', overflow: 'hidden' }} 
+                scrolling="no" 
+                frameBorder="0" 
+                allowFullScreen={true} 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
             </div>
             <h4 className="footer-title">PHƯƠNG THỨC THANH TOÁN</h4>
             <div className="payment-methods">
-              <span>VNPAY</span>
-              <span>COD</span>
+              <div className='payment-method-item'>
+                <img src={vnpay}></img>
+              </div>
+              <div className='payment-method-item'>
+                <img src={COD}></img>
+              </div>
+              {/* <span>VNPAY</span>
+              <span>COD</span> */}
             </div>
             <div className="certifications">
               <div className='inner-bct'>

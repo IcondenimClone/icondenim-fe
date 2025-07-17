@@ -455,12 +455,13 @@ ul {
 
 /* Voucher section  */
 .vouchers-section {
-    padding: 30px 0;
+    padding: 10px 0;
 }
 .vouchers-section .vouchers-wrap{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 12px;
+  padding: 5px 0;
 }
 .voucher-card {
     background-color: #fff;
@@ -562,7 +563,7 @@ ul {
 
 .policy-text .policy-subtitle {
   font-size: 13px;
-  color: #888;
+  color: #050000;
 }
 
 @media (max-width:991.98px){
@@ -1744,7 +1745,10 @@ ul {
     font-weight: bold;
     color: #fff;
 }
-
+.fanpage-widget{
+  display: block;
+  max-width: 332px;
+}
 .fanpage-widget img {
     width: 100%;
     border-radius: 4px;
@@ -1753,13 +1757,17 @@ ul {
 .payment-methods {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
-.payment-methods span {
-    border: 1px solid #fff;
-    padding: 5px 15px;
-    border-radius: 4px;
-    font-size: 13px;
+.payment-methods .payment-method-item {
+    display: inline-block;
+    max-width: 50px;
+    height: auto;
+}
+.payment-method-item img {
+    width: 100%;
+    height: auto;
 }
 
 .certifications {
@@ -1778,7 +1786,7 @@ ul {
 }
 .footer-bottom {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 15px;
     padding-top: 20px;
     font-size: 14px;
     color: #fff;
@@ -1810,4 +1818,108 @@ body::-webkit-scrollbar-thumb {
     background: #000000;
     border-radius: 8px;
     border: 0px solid #555777;
+}
+
+/* FLOATING BUTTONS */
+.floating-buttons-container {
+  position: fixed;
+  bottom: 70px;
+  right: 10px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: slideInFromRight 0.5s ease-out forwards;
+}
+.floating-buttons-container.is-leaving {
+  animation: slideOutToRight 0.5s ease-in forwards;
+}
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%); 
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+.floating-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  position: relative; 
+  overflow: visible; 
+}
+.floating-button.call {
+  background-color: #002346;
+  color: white;
+  font-size: 20px;
+}
+
+.floating-button.scroll-top {
+  background-color: transparent;
+  border: 2px solid #002346;
+  color: #333;
+  font-size: 35px;
+  transition: 0.25s ease-in;
+}
+.floating-button.scroll-top:hover {
+  background-color: #002346;
+  color: #fff;
+}
+
+.pulsing-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #001F5D;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+  z-index: -1; 
+}
+.pulsing-circle:nth-child(2) {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5); 
+    opacity: 0; 
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%); 
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); 
+  }
 }
