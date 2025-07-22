@@ -1,59 +1,119 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.webp';
-import { useState, useRef, useEffect } from 'react';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md'; // Dùng react-icons
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+// import { FaUser } from "react-icons/fa";
+import useWindowSize from '../hooks/useWindowSize';
+import { useMemo } from 'react';
+const menuItems = [
+  <li key="1" className='inner-item-product'><a href="/">Sản phẩm <i className="fas fa-chevron-down"></i></a>
+    <ul>
+      <li>
+        ÁO
+        <ul>
+          <li><a href='/'>Áo thun</a></li>
+          <li><a href='/'>Áo thun</a></li>
+          <li><a href='/'>Áo thun</a></li>
+          <li><a href='/'>Áo thun</a></li>
+          <li><a href='/'>Áo thun</a></li>
+          <li><a href='/'>Áo thun</a></li>
+          <li><a href='/'>Áo thun</a></li>
+          <li><a href='/'>Áo thun</a></li>
+        </ul>
+      </li>
+      <li>
+        QUẦN
+        <ul>
+          <li>Quần Jean</li>
+          <li>Quần Jean</li>
+          <li>Quần Jean</li>
+          <li>Quần Jean</li>
+          <li>Quần Jean</li>
+          <li>Quần Jean</li>
+          <li>Quần Jean</li>
+        </ul>
+      </li>
+      <li>
+        GiàY & PHỤ KIỆN
+        <ul>
+          <li>Giày dép</li>
+          <li>Giày dép</li>
+          <li>Giày dép</li>
+          <li>Giày dép</li>
+          <li>Giày dép</li>
+          <li>Giày dép</li>
+        </ul>
+      </li>
+      <li>BEST SELLER</li>
+      <li>OUTLET-ƯU ĐÃI 30%-70%</li>
+      <li>SMART JEANS</li>
+    </ul>
+  </li>,
+  <li key="2"><a href="/" className='new-product'>Hàng Mới <span className="new-tag">New</span></a></li>,
+  <li key="3"><a href="/">Áo Nam<i className="fas fa-chevron-down"></i></a>
+    {/* <ul className='hidden'>
+      <li>Áo Thun</li>
+      <li>Áo Thun</li>
+      <li>Áo Thun</li>
+      <li>Áo Thun</li>
+      <li>Áo Thun</li>
+      <li>Tank TOp - Áo Ba Lỗ</li>
+      <li>Áo Thun</li>
+      <li>Áo Thun</li>
+    </ul> */}
+  </li>,
+  <li key="4"><a href="/">Quần Nam <i className="fas fa-chevron-down"></i></a>
+    {/* <ul className='hidden'>
+      <li>Quần Jean</li>
+      <li>Quần Jean</li>
+      <li>Quần Jean</li>
+      <li>Quần Kaki & Chino</li>
+      <li>Quần Jean</li>
+      <li>Quần Jean</li>
+      <li>Quần Jean</li>
+    </ul> */}
+  </li>,
+  <li key="5"><a href="/">DENIM <i className="fas fa-chevron-down"></i></a></li>,
+  <li key="6"><a href="/">TechUrban <i className="fas fa-chevron-down"></i></a></li>,
+  <li key="7">
+    <a href="/" className="outlet-link">OUTLET
+        <span className="outlet-percent">-50%</span>
+    </a>
+  </li>,
+  <li key="8"><a href="/">Marvel & Disney<i className="fas fa-chevron-down"></i></a></li>,
+  <li key="9"><a href="/">Collection<i className="fas fa-chevron-down"></i></a></li>,
+  <li key="10"><a href='/'>Tin thời trang</a></li>
+];
 
+function chunkArray(array, size) {
+  const chunkedArr = [];
+  for (let i = 0; i < array.length; i += size) {
+    chunkedArr.push(array.slice(i, i + size));
+  }
+  return chunkedArr;
+}
 function Header() {
-  const navListRef = useRef(null); // Ref để kết nối với thẻ <ul>
-  const [isLeftDisabled, setIsLeftDisabled] = useState(true);
-  const [isRightDisabled, setIsRightDisabled] = useState(false);
+  // const buttonMenuMobile=document.querySelector(".header .inner-menu-mobile")
+  // if(buttonMenuMobile){
+  //   const menu=document.querySelector(".header .header-nav")
+  //   buttonMenuMobile.addEventListener("click",()=>{
+  //     menu.classList.add("active")
+  //   })
+  //   const overlay=document.querySelector(".header .header-nav")
+  //   overlay.addEventListener("click",()=>{
+  //     menu.classList.remove("active")
+  //   })
+  // }
+  const { width } = useWindowSize();
+  const itemsPerPage = width >= 1250 ? 7 : 5;
 
-  // 3. TẠO CÁC HÀM XỬ LÝ
-  const handleScroll = (direction) => {
-    const navList = navListRef.current;
-    if (!navList) return;
 
-    // Cuộn một khoảng 300px mỗi lần bấm
-    const scrollAmount = 300; 
-    
-    // Dùng scrollBy để cuộn mượt mà
-    navList.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth' 
-    });
-  };
-
-  // Hàm này để kiểm tra xem có nên vô hiệu hóa các nút không
-  const checkArrows = () => {
-    const navList = navListRef.current;
-    if (!navList) return;
-
-    // Vô hiệu hóa nút trái nếu đang ở đầu (vị trí cuộn nhỏ hơn 10px để tránh sai số)
-    setIsLeftDisabled(navList.scrollLeft < 10);
-
-    // Vô hiệu hóa nút phải nếu đã cuộn đến cuối
-    const maxScrollLeft = navList.scrollWidth - navList.clientWidth;
-    setIsRightDisabled(navList.scrollLeft >= maxScrollLeft - 10);
-  };
-
-  // 4. DÙNG useEffect ĐỂ GẮN SỰ KIỆN VÀ KIỂM TRA LẦN ĐẦU
-  useEffect(() => {
-    const navList = navListRef.current;
-    if (!navList) return;
-
-    // Phải gọi checkArrows sau một khoảng trễ nhỏ để đảm bảo DOM đã render hoàn chỉnh
-    const timer = setTimeout(checkArrows, 100);
-
-    // Lắng nghe sự kiện 'scroll' để cập nhật lại trạng thái các nút
-    navList.addEventListener('scroll', checkArrows);
-
-    // Dọn dẹp listener và timer khi component bị hủy
-    return () => {
-      navList.removeEventListener('scroll', checkArrows);
-      clearTimeout(timer);
-    };
-  }, []);
-
+  const menuPages = useMemo(() => {
+    return chunkArray(menuItems, itemsPerPage);
+  }, [itemsPerPage]);
   return (
     <header className="header">
       <div className="container">
@@ -64,10 +124,57 @@ function Header() {
           <Link to="/" className="header-logo">
             <img src={logo} alt="ICONDENIM Logo" />
           </Link>
-          
           <nav className="header-nav">
-            <ul ref={navListRef}>
-              <li><a href="/">Sản phẩm <i className="fas fa-chevron-down"></i></a></li>
+            {/* <div className='inner-user'>
+              <div className='inner-left'>
+                <FaUser/>
+              </div>
+              <div className='inner-right'>
+                <div className='inner-login'>Đăng nhập</div>
+                <div className='inner-desc'>Nhận nhiều ưu đãi hơn</div>
+              </div>
+            </div> */}
+            <Swiper
+              direction={'vertical'}
+              modules={[Navigation]}
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation={{
+                nextEl: '.nav-arrow-right',
+                prevEl: '.nav-arrow-left',
+              }}
+              className="menu-swiper-vertical"
+            >
+              {menuPages.map((page, pageIndex) => (
+                <SwiperSlide key={pageIndex}>
+                  <ul className="menu-list">
+                    {page}
+                  </ul>
+                </SwiperSlide>
+              ))}
+              {/* <SwiperSlide> 
+              <ul className='menu-list'>
+                <li><a href="/">Sản phẩm <i className="fas fa-chevron-down"></i></a></li>
+                <li><a href="/" className='new-product'>Hàng Mới <span className="new-tag">New</span></a></li>
+                <li><a href="/">Áo Nam <i className="fas fa-chevron-down"></i></a></li>
+                <li><a href="/">Quần Nam <i className="fas fa-chevron-down"></i></a></li>
+                <li><a href="/">DENIM <i className="fas fa-chevron-down"></i></a></li>
+                <li><a href="/">TechUrban <i className="fas fa-chevron-down"></i></a></li>
+                <li><a href="/" className="outlet-link">OUTLET
+                    <span className="outlet-percent">-50%</span>
+                    </a>
+                </li> 
+              </ul>
+              </SwiperSlide>   
+              <SwiperSlide>
+                  <ul  className='menu-list'>
+                    <li><a href="/">Marvel & Disney <i className="fas fa-chevron-down"></i></a></li>
+                    <li><a href="/">Collection <i className="fas fa-chevron-down"></i></a></li>
+                    <li><a href='/'>Tin thời trang</a></li>
+                  </ul>
+              </SwiperSlide> */}
+              </Swiper>
+              {/* <li><a href="/">Sản phẩm <i className="fas fa-chevron-down"></i></a></li>
               <li><a href="/" className='new-product'>Hàng Mới <span className="new-tag">New</span></a></li>
               <li><a href="/">Áo Nam <i className="fas fa-chevron-down"></i></a></li>
               <li><a href="/">Quần Nam <i className="fas fa-chevron-down"></i></a></li>
@@ -76,24 +183,16 @@ function Header() {
               <li><a href="/" className="outlet-link">OUTLET
                   <span className="outlet-percent">-50%</span>
                   </a>
-              </li> 
+              </li>  */}
               {/* <li><a href="/">Marvel & Disney</a></li>
               <li><a href="/">Collection</a></li> */}
-            </ul>
+              <div class="inner-overlay"></div>
           </nav>
           <div className="header-actions">
-            <button 
-              className="nav-arrow" 
-              onClick={() => handleScroll('left')} 
-              disabled={isLeftDisabled}
-            >
+            <button className="nav-arrow nav-arrow-left">
               <MdChevronLeft />
             </button>
-            <button 
-              className="nav-arrow" 
-              onClick={() => handleScroll('right')}
-              disabled={isRightDisabled}
-            >
+            <button className="nav-arrow nav-arrow-right">
               <MdChevronRight />
             </button>
 

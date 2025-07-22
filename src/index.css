@@ -70,20 +70,36 @@ ul {
 .header-nav {
     flex-grow: 1; 
     overflow: hidden;
+    height: 50px;
+}
+.menu-swiper-vertical {
+  width: 100%;
+  height: 100%; 
 }
 .header-nav ul {
     /* padding-top: 15px; */
     display: flex;
     gap: 30px;
     align-items: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;  
+    list-style: none;
+    /* overflow-x: auto; */
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
-.header-nav ul li{
+.header-nav .menu-list li {
+  flex-shrink: 0;
   padding: 15px 0;
+  position: relative;
+}
+.header-nav .menu-list>li>ul{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+  top: 100%;
+  left: 0;
+  position: absolute;
+  z-index: 999;
 }
 .header-nav a {
     font-size: 16px;
@@ -91,9 +107,15 @@ ul {
     display: flex;
     align-items: center;
     gap: 8px;
+    position: relative;
+}
+@media (max-width:1250px){
+  .header-nav a{
+    font-size: 14px;
+  }
 }
 .header-nav a .fa-chevron-down {
-  font-size: 0.8em; 
+  font-size: 12px; 
   position: relative;
 }
 .header-nav a.new-product{
@@ -105,23 +127,24 @@ ul {
     font-weight: bold;
     position: absolute;
     top: -12px; 
-    left: 73px;
+    left: 62px;
 }
 .header-nav a.outlet-link {
     /* display: flex;
     flex-direction: column; 
     align-items: center;
     line-height: 1; */
-    color: red;
+    position: relative;
+    color: #d0021b;
     font-weight: 700;
 }
 .outlet-percent {
     font-size: 16px;
-    color: red;
+    color: #d0021b;
     font-weight: 500;
-    position: relative;
+    position: absolute;
     top: -18px; 
-    left: -75px;
+    left: -5px;
 }
 .header-actions {
     display: flex;
@@ -154,7 +177,7 @@ ul {
 .header-actions > button:first-child{
   margin-right: 20px;
 }
-/* Style khi nút bị vô hiệu hóa */
+
 .nav-arrow:disabled {
   color: #CBCBCB;
   pointer-events: none; 
@@ -184,9 +207,9 @@ ul {
 
 @media (max-width:991.98px){
   .header{
-    padding: 10px;
+    /* padding: 10px; */
   }
-  .header .header-nav > ul{
+  .header .header-nav ul{
       display: none;
   }
   .header .inner-menu-mobile{
@@ -200,6 +223,9 @@ ul {
       margin-right: 15px;
   }
   .header-actions .nav-arrow {
+    display: none;
+  }
+  .header-actions a:nth-of-type(2){
     display: none;
   }
 }
